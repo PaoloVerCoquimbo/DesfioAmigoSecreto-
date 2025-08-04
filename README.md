@@ -96,7 +96,7 @@ Este proyecto está bajo la licencia MIT. Consulta el archivo `LICENSE` para má
 
 ## 📫 Contacto
 
-Paolo Vercoquimbo - paolo@email.com  
+Paolo Vercoquimbo  
 [GitHub](https://github.com/paolovercoquimbo) | [LinkedIn]([https://linkedin.com/in/paolovercoquimbo](https://www.linkedin.com/in/paolo-vergara-a0629365/))
 
 
