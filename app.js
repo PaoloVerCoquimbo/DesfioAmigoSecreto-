@@ -146,7 +146,11 @@ function sortearAmigo() {
 
     // Limpia el contenido anterior para mostrar solo el nuevo resultado
     resultado.innerHTML = "";
-
+  // deben haber minimo dos amigos 
+if (amigos.length < 2) {
+    resultado.textContent = "Debes agregar al menos dos amigos para hacer el sorteo.";
+    return;
+}
     // Si no hay amigos agregados, muestra mensaje y detiene la función
     if (amigos.length === 0) {
         resultado.textContent = "No hay amigos para sortear.";
@@ -186,6 +190,7 @@ function sortearAmigo() {
     // Inserta el <li> dentro del contenedor de resultados para que se muestre en la web
     resultado.appendChild(li);
 }
+
 
 
 
