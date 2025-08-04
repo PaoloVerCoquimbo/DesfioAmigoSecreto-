@@ -1,9 +1,7 @@
-// se agrega lista con palabra no adecuadas al juego del amigo secrerto 
-// Lista de palabras no adecuadas para el juego del amigo secreto
+// lista de palabras prohibidas 
 const palabrasProhibidas = [
-  // Comunes sin sentido
-  "asdf", "qwerty", "lkj", "abc", "aaa", "a", "aa", "bb", "zzz", "xxx",
-  "jeje", "jajaja", "xd", "lol", "uwu", "nombre", "usuario", "prueba", "test",
+  // Comunes sin sentido (solo palabras completas, sin letras sueltas)
+  "asdf", "qwerty", "jeje", "jajaja", "lol", "uwu", "nombre", "usuario", "prueba", "test",
 
   // Groserías (español)
   "puta", "mierda", "kaka", "pedo", "verga", "pene", "culo", "idiota", "imbecil",
@@ -12,28 +10,36 @@ const palabrasProhibidas = [
   "fuck", "shit", "crap", "bitch", "dick", "ass", "bastard", "jerk", "damn", "cock", "pussy",
 
   // Frutas (español)
-  "manzana", "naranja", "platano", "banana", "pera", "uva", "sandia", "melon", "frutilla", "fresa", "cereza", "kiwi", "papaya", "mango", "durazno", "limon", "mandarina", "arándano", "tamarindo",
+  "manzana", "naranja", "platano", "banana", "pera", "uva", "sandia", "melon", "frutilla", "fresa",
+  "cereza", "kiwi", "papaya", "mango", "durazno", "limon", "mandarina", "arándano", "tamarindo",
 
   // Fruits (English)
-  "apple", "orange", "banana", "pear", "grape", "watermelon", "melon", "strawberry", "cherry", "kiwi", "papaya", "mango", "peach", "lemon", "lime", "blueberry", "cranberry",
+  "apple", "orange", "banana", "pear", "grape", "watermelon", "melon", "strawberry",
+  "cherry", "kiwi", "papaya", "mango", "peach", "lemon", "lime", "blueberry", "cranberry",
 
   // Verduras (español)
-  "lechuga", "tomate", "cebolla", "ajo", "brocoli", "zanahoria", "pepino", "papa", "camote", "col", "repollo", "espinaca", "acelga",
+  "lechuga", "tomate", "cebolla", "ajo", "brocoli", "zanahoria", "pepino", "papa",
+  "camote", "col", "repollo", "espinaca", "acelga",
 
   // Vegetables (English)
-  "lettuce", "tomato", "onion", "garlic", "broccoli", "carrot", "cucumber", "potato", "sweetpotato", "cabbage", "spinach", "chard",
+  "lettuce", "tomato", "onion", "garlic", "broccoli", "carrot", "cucumber", "potato",
+  "sweetpotato", "cabbage", "spinach", "chard",
 
   // Sentimientos / emociones (español)
-  "feliz", "triste", "enojo", "miedo", "alegría", "odio", "amor", "pena", "ansiedad", "soledad", "celos", "vergüenza", "culpa",
+  "feliz", "triste", "enojo", "miedo", "alegría", "odio", "amor", "pena",
+  "ansiedad", "soledad", "celos", "vergüenza", "culpa",
 
   // Feelings / emotions (English)
-  "happy", "sad", "angry", "fear", "joy", "hate", "love", "shame", "anxiety", "lonely", "jealous", "guilt",
+  "happy", "sad", "angry", "fear", "joy", "hate", "love", "shame",
+  "anxiety", "lonely", "jealous", "guilt",
 
   // Colores (español)
-  "rojo", "azul", "verde", "amarillo", "morado", "negro", "blanco", "gris", "rosado", "naranja",
+  "rojo", "azul", "verde", "amarillo", "morado", "negro", "blanco",
+  "gris", "rosado", "naranja",
 
   // Colors (English)
-  "red", "blue", "green", "yellow", "purple", "black", "white", "gray", "pink", "orange",
+  "red", "blue", "green", "yellow", "purple", "black", "white",
+  "gray", "pink", "orange",
 
   // Sensaciones (español e inglés)
   "calor", "frío", "frio", "luz", "oscuridad", "sombra", "fuego", "hielo",
@@ -42,7 +48,6 @@ const palabrasProhibidas = [
   // Nombres ficticios típicos
   "pepe", "juanito", "tontin", "bob", "nemo", "shrek", "batman", "pikachu"
 ];
-
 
 
 
@@ -179,6 +184,7 @@ function sortearAmigo() {
     // Inserta el <li> dentro del contenedor de resultados para que se muestre en la web
     resultado.appendChild(li);
 }
+
 
 
 
