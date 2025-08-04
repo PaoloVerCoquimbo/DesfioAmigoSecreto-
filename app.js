@@ -34,7 +34,7 @@ function agregarAmigo() {
 
     // Verifica si el nombre ya está en la lista para evitar duplicados
     if (amigos.includes(nombre)) {
-        alert("Ese nombre ya fue ingresado. si tu amigo se llama igual que ya ingresaste\n  puede agregar la letra de su apellido\n  junto al nombre para diferenciarlos ");
+        alert("Ese nombre ya fue ingresado.\n  si tu amigo se llama igual al  que ya ingresaste\n  puedes agregar la letra de su apellido  junto al nombre para diferenciarlos ");
         return;
     }
 
@@ -121,4 +121,5 @@ function sortearAmigo() {
     // Inserta el <li> dentro del contenedor de resultados para que se muestre en la web
     resultado.appendChild(li);
 }
+
 
