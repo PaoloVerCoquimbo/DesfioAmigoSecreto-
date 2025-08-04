@@ -87,13 +87,15 @@ function agregarAmigo() {
     }
 
       // Validación manual con for verifica si esta en la lista de palabra no aceptadas 
-    for (let i = 0; i < palabrasProhibidas.length; i++) {
-        const palabra = palabrasProhibidas[i];
-        if (nombre.includes(palabra)) {
-            alert(`El nombre contiene una palabra no permitida: "${palabra}". Usa tu nombre real.\n  solo se validan algunas palabras ES \n  deberia conectar a una BD de nombre \n  Para mayor validacion del juego`);
-            return;
-        }
+for (let i = 0; i < palabrasProhibidas.length; i++) {
+    const palabra = palabrasProhibidas[i];
+    const regex = new RegExp(`\\b${palabra}\\b`, "i"); // busca palabra entera, sin importar mayúsculas
+    if (regex.test(nombre)) {
+        alert(`El nombre contiene una palabra no permitida: "${palabra}". Usa tu nombre real.`);
+        return;
     }
+}
+
 
     // Verifica si el nombre ya está en la lista para evitar duplicados
     if (amigos.includes(nombre)) {
@@ -184,6 +186,7 @@ function sortearAmigo() {
     // Inserta el <li> dentro del contenedor de resultados para que se muestre en la web
     resultado.appendChild(li);
 }
+
 
 
 
