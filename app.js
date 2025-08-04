@@ -191,6 +191,14 @@ if (amigos.length < 2) {
     resultado.appendChild(li);
 }
 
+// funcion reinica el juego 
+function reiniciarJuego() {
+    amigos.length = 0;
+    amigosEscogidos.length = 0;
+    document.getElementById("listaAmigos").innerHTML = "";
+    document.getElementById("resultado").innerHTML = "";
+}
+
 
 
 
