@@ -1,7 +1,7 @@
 // lista de palabras prohibidas 
 const palabrasProhibidas = [
   // Comunes sin sentido (solo palabras completas, sin letras sueltas)
-  "asdf", "qwerty", "jeje", "jajaja", "lol", "uwu", "nombre", "usuario", "prueba", "test",
+  //  estas palabras generan error debo buscar una mejor solucion mas adelante "asdf", "qwerty", "jeje", "jajaja", "lol", "uwu", "nombre", "usuario", "prueba", "test",
 
   // Groserías (español)
   "puta", "mierda", "kaka", "pedo", "verga", "pene", "culo", "idiota", "imbecil",
@@ -184,6 +184,7 @@ function sortearAmigo() {
     // Inserta el <li> dentro del contenedor de resultados para que se muestre en la web
     resultado.appendChild(li);
 }
+
 
 
 
