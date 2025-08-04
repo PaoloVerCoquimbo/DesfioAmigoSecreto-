@@ -13,7 +13,8 @@ function agregarAmigo() {
     const input = document.getElementById("amigo");
 
     // Obtiene el texto ingresado y elimina espacios al inicio y al final
-    const nombre = input.value.trim();
+   // const nombre = input.value.trim();
+    const nombre = input.value.trim().toLowerCase();// esto deja todo en minusculas 
 
     // Si el campo está vacío (sin texto), muestra alerta y termina la función
     if (nombre === "") {
@@ -27,13 +28,13 @@ function agregarAmigo() {
 
     // Si el texto no cumple con la validación, muestra alerta y termina la función
     if (!regexNombre.test(nombre)) {
-        alert("El nombre solo puede contener letras y espacios.");
+        alert("El nombre solo puede contener letras");
         return;
     }
 
     // Verifica si el nombre ya está en la lista para evitar duplicados
     if (amigos.includes(nombre)) {
-        alert("Ese nombre ya fue ingresado.");
+        alert("Ese nombre ya fue ingresado. si tu amigo se llama igual que ya ingresaste\n  puede agregar la letra de su apellido\n  junto al nombre para diferenciarlos ");
         return;
     }
 
@@ -120,3 +121,4 @@ function sortearAmigo() {
     // Inserta el <li> dentro del contenedor de resultados para que se muestre en la web
     resultado.appendChild(li);
 }
+
