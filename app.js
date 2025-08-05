@@ -157,6 +157,7 @@ if (amigos.length < 2) {
     // Si no hay amigos agregados, muestra mensaje y detiene la función
     if (amigos.length === 0) {
         resultado.textContent = "No hay amigos para sortear.";
+       document.querySelector('button[aria-label="Reiniciar"]').disabled = false;
         return;
     }
 
@@ -197,11 +198,13 @@ if (amigos.length < 2) {
 
 // funcion reinica el juego 
 function reiniciarJuego() {
+  document.querySelector('button[aria-label="Reiniciar"]').disabled = true;
     amigos.length = 0;
     amigosEscogidos.length = 0;
     document.getElementById("listaAmigos").innerHTML = "";
     document.getElementById("resultado").innerHTML = "";
 }
+
 
 
 
