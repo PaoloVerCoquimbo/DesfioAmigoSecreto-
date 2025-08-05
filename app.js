@@ -116,7 +116,7 @@ for (let i = 0; i < palabrasProhibidas.length; i++) {
 /**
  * Función que actualiza la lista HTML que muestra los nombres agregados
  */
-/* function mostrarLista() {
+ function mostrarLista() {
     // Obtiene el elemento UL donde se mostrarán los nombres
     const lista = document.getElementById("listaAmigos");
 
@@ -135,21 +135,8 @@ for (let i = 0; i < palabrasProhibidas.length; i++) {
         lista.appendChild(item);
     });
 }
-*/ 
 
-function mostrarLista() {
-    const lista = document.getElementById("listaAmigos");
-    lista.innerHTML = "";
 
-    // Solo mostramos los amigos que no han sido sorteados aún
-    const amigosRestantes = amigos.filter(amigo => !amigosEscogidos.includes(amigo));
-
-    amigosRestantes.forEach((amigo, index) => {
-        const item = document.createElement("li");
-        item.textContent = `${index + 1}. ${amigo}`;
-        lista.appendChild(item);
-    });
-}
 
 
 /**
@@ -215,6 +202,7 @@ function reiniciarJuego() {
     document.getElementById("listaAmigos").innerHTML = "";
     document.getElementById("resultado").innerHTML = "";
 }
+
 
 
 
