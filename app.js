@@ -205,6 +205,7 @@ if (amigos.length < 2) {
 
     // Inserta el <li> dentro del contenedor de resultados para que se muestre en la web
     resultado.appendChild(li);
+   mostrarLista();
 }
 
 // funcion reinica el juego 
@@ -214,6 +215,7 @@ function reiniciarJuego() {
     document.getElementById("listaAmigos").innerHTML = "";
     document.getElementById("resultado").innerHTML = "";
 }
+
 
 
 
