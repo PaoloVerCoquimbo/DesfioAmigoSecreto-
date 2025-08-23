@@ -14,14 +14,19 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+/*se agrego imagen en el body navideña de acuerdo a la logica del juego */
 body {
     height: 100vh;
-    background-color: var(--color-primary);
+    /* background-color: var(--color-button); */ /* opcional si quieres color de base */
+    background-image: url('/DesfioAmigoSecreto-/assets/img/LogicaDelAmigoSecreto2.jpeg'); /* tu imagen */
+    background-size: cover;     /* cubre todo el body */
+    background-position: center; /* centra la imagen */
+    background-repeat: no-repeat; /* no repite */
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 
 .main-content {
     display: flex;
@@ -86,11 +91,15 @@ body {
     border-radius: 25px 0 0 25px;
     font-size: 16px;
 }
-
+/* es el diseño de los botones */
 .button-container {
-    width: 300px;
-    justify-content: center;
+    display: flex;           /* activa Flexbox */
+    justify-content: center; /* centra horizontalmente los botones */
+    flex-direction: row;     /* alinea los elementos en fila */
+    gap: 10px;               /* espacio entre botones */
+    width: 300px;            /* ancho del contenedor, opcional */
 }
+
 
 /* Estilos de entrada de texto */
 .input-title {
@@ -124,6 +133,23 @@ button {
 .button-add:hover {
     background-color: #a1a1a1;
 }
+
+/*estilo de botón eliminar*/
+.btn-eliminar {
+    margin-left: 10px;      /* separación visual del nombre */
+    cursor: pointer;         /* cambia cursor al pasar por encima */
+    background: transparent; /* fondo transparente */
+    border: none;            /* sin borde */
+    padding: 0;              /* sin padding */
+    font-size: 14px;         /* tamaño pequeño */
+    line-height: 1;          /* altura de línea ajustada */
+}
+
+/* Opcional: mostrar solo al pasar el mouse sobre el <li> */
+li:hover .btn-eliminar {
+    display: inline; /* se culta por defecto */
+}
+
 
 /* Listas */
 ul {
@@ -159,4 +185,11 @@ ul {
 
 .button-draw:hover {
     background-color: var(--color-button-hover);
+}
+
+
+/* se  agrega  para secciones */
+.content-grid.fixed-size {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 350px));
+    justify-content: center;
 }

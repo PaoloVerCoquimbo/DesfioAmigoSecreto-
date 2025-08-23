@@ -1,4 +1,22 @@
-// lista de palabras prohibidas 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// lista de palabras prohibidas ********************************************
 const palabrasProhibidas = [
   // Comunes sin sentido (solo palabras completas, sin letras sueltas)
   //  estas palabras generan error debo buscar una mejor solucion mas adelante "asdf", "qwerty", "jeje", "jajaja", "lol", "uwu", "nombre", "usuario", "prueba", "test",
@@ -61,80 +79,116 @@ const amigosEscogidos = [];
 /**
  * Función que se ejecuta cuando el usuario hace clic en "Añadir"
  * Toma el valor del input, lo valida, y si es correcto lo agrega al arreglo 'amigos'
- */
-function agregarAmigo() {
-    // Obtiene el input de texto donde el usuario escribe el nombre
-    const input = document.getElementById("amigo");
+    */
+                function agregarAmigo() {
+                    // Obtiene el input de texto donde el usuario escribe el nombre
+                    const input = document.getElementById("amigo");
 
-    // Obtiene el texto ingresado y elimina espacios al inicio y al final
-   // const nombre = input.value.trim();
-    const nombre = input.value.trim().toLowerCase();// esto deja todo en minusculas 
+                    // Obtiene el texto ingresado y elimina espacios al inicio y al final
+                // const nombre = input.value.trim();
+                    const nombre = input.value.trim().toLowerCase();// esto deja todo en minusculas 
 
-    // Si el campo está vacío (sin texto), muestra alerta y termina la función
-    if (nombre === "") {
-        alert("Por favor, escribe un nombre.");
-        return; // Sale de la función para no continuar con el código siguiente
-    }
+                    // Si el campo está vacío (sin texto), muestra alerta y termina la función
+                    if (nombre === "") {
+                        alert("Por favor, escribe un nombre.");
+                        return; // Sale de la función para no continuar con el código siguiente
+                    }
 
-    // Expresión regular que valida que el nombre solo contenga letras y espacios
-    // Incluye letras mayúsculas, minúsculas, con tilde y ñ
-    const regexNombre = /^[A-Za-zÁÉÍÓÚáéíóúÑñ ]+$/;
+                    // Expresión regular que valida que el nombre solo contenga letras y espacios
+                    // Incluye letras mayúsculas, minúsculas, con tilde y ñ
+                    const regexNombre = /^[A-Za-zÁÉÍÓÚáéíóúÑñ ]+$/;
 
-    // Si el texto no cumple con la validación, muestra alerta y termina la función
-    if (!regexNombre.test(nombre)) {
-        alert("El nombre solo puede contener letras");
-        return;
-    }
+                    // Si el texto no cumple con la validación, muestra alerta y termina la función
+                    if (!regexNombre.test(nombre)) {
+                        alert("El nombre solo puede contener letras");
+                        return;
+                    }
 
-      // Validación manual con for verifica si esta en la lista de palabra no aceptadas 
-for (let i = 0; i < palabrasProhibidas.length; i++) {
-    const palabra = palabrasProhibidas[i];
-    const regex = new RegExp(`\\b${palabra}\\b`, "i"); // busca palabra entera, sin importar mayúsculas
-    if (regex.test(nombre)) {
-        alert(`El nombre contiene una palabra no permitida: "${palabra}". Usa tu nombre real.`);
-        return;
-    }
-}
+                    // Validación manual con for verifica si esta en la lista de palabra no aceptadas 
+                for (let i = 0; i < palabrasProhibidas.length; i++) {
+                    const palabra = palabrasProhibidas[i];
+                    const regex = new RegExp(`\\b${palabra}\\b`, "i"); // busca palabra entera, sin importar mayúsculas
+                    if (regex.test(nombre)) {
+                        alert(`El nombre contiene una palabra no permitida: "${palabra}". Usa tu nombre real.`);
+                        return;
+                    }
+                }
 
 
-    // Verifica si el nombre ya está en la lista para evitar duplicados
-    if (amigos.includes(nombre)) {
-        alert("Ese nombre ya fue ingresado.\n  si tu amigo se llama igual al  que ya ingresaste\n  puedes agregar la letra de su apellido  junto al nombre para diferenciarlos ");
-        return;
-    }
+                    // Verifica si el nombre ya está en la lista para evitar duplicados
+                    if (amigos.includes(nombre)) {
+                        alert("Ese nombre ya fue ingresado.\n  si tu amigo se llama igual al  que ya ingresaste\n  puedes agregar la letra de su apellido  junto al nombre para diferenciarlos ");
+                        return;
+                    }
 
-    // Si pasa todas las validaciones, agrega el nombre al arreglo 'amigos'
-    amigos.push(nombre);
+                    // Si pasa todas las validaciones, agrega el nombre al arreglo 'amigos'
+                    amigos.push(nombre);
 
-    // Limpia el campo input para que el usuario pueda escribir otro nombre
-    input.value = "";
+                    // Limpia el campo input para que el usuario pueda escribir otro nombre
+                    input.value = "";
 
-    // Actualiza la lista visible en la página para mostrar el nuevo amigo agregado
-    mostrarLista();
-}
+                    // Actualiza la lista visible en la página para mostrar el nuevo amigo agregado
+                    mostrarLista();
+                }
 
 /**
  * Función que actualiza la lista HTML que muestra los nombres agregados
+ * y agrega un botón para eliminar cada amigo con un tooltip
  */
- function mostrarLista() {
-    // Obtiene el elemento UL donde se mostrarán los nombres
-    const lista = document.getElementById("listaAmigos");
+                        function mostrarLista() {
+                            // Obtiene el elemento UL donde se mostrarán los nombres
+                            const lista = document.getElementById("listaAmigos");
 
-    // Limpia el contenido HTML para evitar duplicar la lista completa cada vez
-    lista.innerHTML = "";
+                            // Limpia el contenido HTML para evitar duplicar la lista completa cada vez
+                            lista.innerHTML = "";
 
-    // Recorre el arreglo 'amigos' para mostrar cada nombre
-    amigos.forEach((amigo, index) => {
-        // Crea un nuevo elemento <li> para cada amigo
-        const item = document.createElement("li");
+                            // Recorre el arreglo 'amigos' para mostrar cada nombre
+                            amigos.forEach((amigo, index) => {
+                                // Crea un nuevo elemento <li> para cada amigo
+                                const item = document.createElement("li");
 
-        // Establece el texto del <li>, con número y nombre
-        item.textContent = `${index + 1}. ${amigo}`;
+                                // Establece el texto del <li>, con número y nombre
+                                item.textContent = `${index + 1}. ${amigo}`;
 
-        // Inserta el <li> dentro del <ul>
-        lista.appendChild(item);
-    });
+             // ---------------------------
+            // Botón para eliminar amigo
+             // ---------------------------
+                 const btnEliminar = document.createElement("button");
+                 btnEliminar.textContent = "❌";             // Icono de X
+                 btnEliminar.title = "Eliminar amigo";      // Tooltip
+                btnEliminar.classList.add("btn-eliminar"); // Clase CSS para estilo
+
+            // Evento click para eliminar el amigo
+                btnEliminar.onclick = function() {
+                                                    eliminarAmigo(index);
+                                                 };
+
+
+                                // Añade el botón al <li>
+                                item.appendChild(btnEliminar);
+
+                                // Inserta el <li> dentro del <ul>
+                                lista.appendChild(item);
+                            });
+                        }
+
+/**
+ * Función que elimina un amigo de la lista
+ * @param {number} indice - Índice del amigo a eliminar
+ */
+function eliminarAmigo(indice) {
+    const eliminado = amigos.splice(indice, 1)[0]; // Elimina del arreglo 'amigos'
+
+    // Si estaba en los sorteados, también se elimina de 'amigosEscogidos'
+    const posEscogido = amigosEscogidos.indexOf(eliminado);
+    if (posEscogido > -1) {
+        amigosEscogidos.splice(posEscogido, 1);
+    }
+
+    // Actualiza la lista visible
+    mostrarLista();
 }
+
 
 
 
