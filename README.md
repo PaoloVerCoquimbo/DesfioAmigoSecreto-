@@ -7,7 +7,7 @@
 ---
 
 # 📝 Insignia 
-![Insignia](assets/img/nsignia.png)
+![Insignia](assets/img/insignia.png)
 
 
 
