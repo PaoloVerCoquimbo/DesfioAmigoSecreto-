@@ -7,7 +7,7 @@
 ---
 
 # 📝 Insignia 
-![Insignia](assets/icons/ff043987-239b-4661-bdb1-7f4ca6092c48-2.png)
+![Insignia](assets/img/nsignia.png)
 
 
 
