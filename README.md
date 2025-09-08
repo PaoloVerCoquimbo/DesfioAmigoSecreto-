@@ -1,6 +1,6 @@
 # 🎁 Desafío Amigo Secreto
 
-![Banner](assets/img/amig_secreto-png)
+![Banner](/assets/img/amigo_secreto.png)
 
 *Proyecto web para organizar un sorteo de amigo secreto con validación y sorteo aleatorio.*
 
