@@ -45,6 +45,9 @@ Este proyecto es una aplicación web simple para gestionar el juego de "Amigo Se
 ## 📁 Estructura del proyecto
 
 /DesafioAmigoSecreto/
+├── assents
+   ├── icons
+   ├── Img
 ├── index.html
 ├── app.js
 ├── styles.css
